@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iPhone 12 页面卷动逐行滑入效果</title>
+    <link href="./index.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h2>Superfast wireless
+    <p>Hello 5G.</p>
+</h2>
+<div id="iphone">
+    <!--  hardware 用来显示iphone的机身和边框  -->
+    <div id="hardware"></div>
+    <!--  ui 显示画面的内容  -->
+    <div id="ui">
+        <img src="./img/iphone12-5g_top_ui.jpg" class="top-ui" alt="">
+        <ul>
+            <li style="--progress:0.6">
+                <img src="https://assets.codepen.io/2002878/iphone12-5g_show_01.jpg"/>
+            </li>
+            <li>
+                <img src="https://assets.codepen.io/2002878/iphone12-5g_show_02.jpg"/>
+            </li>
+            <li>
+                <img src="https://assets.codepen.io/2002878/iphone12-5g_show_03.jpg"/>
+            </li>
+            <li>
+                <img src="https://assets.codepen.io/2002878/iphone12-5g_show_04.jpg"/>
+            </li>
+            <li>
+                <img src="https://assets.codepen.io/2002878/iphone12-5g_show_05.jpg"/>
+            </li>
+            <li>
+                <img src="https://assets.codepen.io/2002878/iphone12-5g_show_06.jpg"/>
+            </li>
+            <li>
+                <img src="https://assets.codepen.io/2002878/iphone12-5g_show_07.jpg"/>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+
+const rows = document.querySelectorAll('#ui ul li')
+const html = document.documentElement
+
+// 监听页面滚动
+document.addEventListener('scroll', (e) => {
+    let scolled = html.scrollTop / (html.scrollHeight - html.clientHeight)
+    // console.log(scolled)
+    // console.log(html.scrollTop)
+    // console.log(html.scrollHeight)
+    // console.log(html.clientHeight)
+
+    let total = 1 / rows.length
+    console.log(rows)
+    console.log(rows.entries())
+    for (let [index, row] of rows.entries()) {
+        let start = total * index
+        let end = total * (index + 1)
+        console.log(`row ${index}: ${start} - ${end}`)
+        let prograss = (scolled - start) / (end - start)
+        if (prograss >= 1) prograss = 1
+        if (prograss <= 0) prograss = 0
+
+        row.style.setProperty('--progress',prograss)
+
+    }
+
+})
+
+
+</script>
+
+
+</html>
