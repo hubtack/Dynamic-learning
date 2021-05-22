@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<div class="onClickEvn" id="idName" onclick="clickBtn()" title="这是一个title">
+	点击
+</div>
+
+
+</body>
+<script>
+	
+	function clickBtn(){
+		clickIdName.innerText='修改后的值'
+		var clickEnv = document.getElementsByClassName('onClickEvn');
+		var clickIdName = document.getElementById('idName')
+		var clickQuerySelectorAll = document.querySelectorAll("#idName")
+		console.log('clickEnv',clickEnv)
+		console.log('clickIdName',clickIdName)
+		console.log('clickQuerySelectorAll',clickQuerySelectorAll)
+		console.log('clickEnv.title',clickEnv.title)
+		console.log('clickIdName.title',clickIdName.title)
+		
+	}
+</script>
+
+</html>
