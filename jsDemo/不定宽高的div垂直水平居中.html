@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>不定宽高的div垂直水平居中</title>
+</head>
+<style type="text/css">
+    .nav1 div{
+        border: 1px #4ec1f1 solid;
+    }
+    .nav1{
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .div1{
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .nav2 div{
+        border: 1px #4ec1f1 solid;
+    }
+    .nav2{
+      position: relative;
+    }
+    .div2{
+        transform:translate(-50%,-50%);
+        position:absolute;
+        top: 50%;
+        left: 50%;
+    }
+
+
+
+
+
+</style>
+
+<body>
+<div>
+    <h4>使用CSS方法</h4>
+    <div class="nav1">
+        <div class="div1">五星红旗迎风飘扬 胜利歌声多么嘹亮 歌唱我们亲爱的祖国 从今走向繁荣富强 五星红旗迎风飘扬</div>
+        <div class="div1">胜利歌声多么嘹亮 歌唱我们亲爱的祖国 从今走向繁荣富强 越过高山（越过高山） 越过平原（越过平原） 跨过奔腾的黄河长江（长江） 宽广美丽的土地 是我们亲爱的家乡</div>
+        <div class="div1">是我们亲爱的家乡 英雄人民站起来了 我们团结友爱坚强如钢</div>
+    </div>
+</div>
+
+<hr/>
+
+<div>
+    <h4>使用CSS3 transform方法</h4>
+    <div class="nav2">
+        <div class="div2">五星红旗迎风飘扬 胜利歌声多么嘹亮 歌唱我们亲爱的祖国 从今走向繁荣富强 五星红旗迎风飘扬</div>
+        <div class="div2">胜利歌声多么嘹亮 歌唱我们亲爱的祖国 从今走向繁荣富强 越过高山（越过高山） 越过平原（越过平原） 跨过奔腾的黄河长江（长江） 宽广美丽的土地 是我们亲爱的家乡</div>
+        <div class="div2">是我们亲爱的家乡 英雄人民站起来了 我们团结友爱坚强如钢</div>
+    </div>
+</div>
+
+
+</body>
+</html>
