@@ -79,12 +79,28 @@ const some = (array,fn)=>{
 let array2 =  [1,2,3,4]
 let q = some(array2,v=>v%2===0)
 console.log(q)
-
+console.log("----------------------------------")
 /*
   * @describe: 闭包 就是一个函数可以访问到另一个函数的某一变量。
   * 闭包延长了外部函数它内部变量的作用范围。
 */
 
 
+/*
+  * @describe:  纯函数和不纯函数
+  * @author: BinJ
+  * @date: 2021-06-07 22:37:17
+*/
 
+// 演示 slice / splice
+// slice:纯函数，不会更改原数组
+let array3 = [1,2,3,4,5]
+console.log(array3.slice(0,3))
+console.log(array3.slice(0,3))
+console.log(array3.slice(0,3))
+console.log("----------------------------------")
+// splie:不纯的函数，会更改原数组
+console.log(array3.splice(0,3))
+console.log(array3.splice(0,3))
+console.log(array3.splice(0,3))
 
